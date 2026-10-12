@@ -1,16 +1,983 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>О нас</title>
+
+    <title>ҚЫЗМЕТ KZ — Help for Your Home, Yard and Property</title>
+
+    <meta
+        name="description"
+        content="ҚЫЗМЕТ KZ provides household assistance, yard cleaning, waste removal, fence repairs, property maintenance, and other practical services."
+    >
+
+    <meta name="theme-color" content="#08754D">
+
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <h1>О нас</h1>
-    <p>Это вторая страница моего сайта.</p>
+    <!-- ================= HEADER ================= -->
+    <header class="header" id="header">
+        <div class="container header__inner">
 
-    <a href="index.html">← Вернуться на главную</a>
+            <a href="#top" class="logo" aria-label="ҚЫЗМЕТ KZ — Home">
+                <span>ҚЫЗМЕТ</span>
+                <strong>KZ</strong>
+            </a>
+
+            <nav class="nav" id="nav">
+                <a href="#services">Services</a>
+                <a href="#how">How It Works</a>
+                <a href="#works">Our Work</a>
+                <a href="#contacts">Contact</a>
+            </nav>
+
+
+<!-- Lang change -->
+
+
+<div class="language-dropdown">
+    <label for="languageSelect" class="sr-only">
+        Select language
+    </label>
+
+    <select id="languageSelect" class="language-dropdown__select">
+        <option value="index.html">🇰🇿 Қазақша</option>
+        <option value="index-ru.html">🇷🇺 Русский</option>
+        <option value="indexuz.html">🇺🇿 O‘zbekcha</option>
+        <option value="page-tur.html">🇹🇷 Türkçe</option>
+        <option value="page-en.html">🇬🇧 English</option>
+    </select>
+</div>
+
+
+
+<!-- Lang change end -->
+            <a
+                class="btn btn--primary header__call"
+                data-phone
+                href="#"
+            >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2
+                    19.79 19.79 0 0 1-8.63-3.07
+                    19.5 19.5 0 0 1-6-6
+                    19.79 19.79 0 0 1-3.07-8.67
+                    A2 2 0 0 1 4.11 2h3a2 2 0 0 1
+                    2 1.72c.12.9.33 1.78.62 2.63
+                    a2 2 0 0 1-.45 2.11L8 9.73
+                    a16 16 0 0 0 6 6l1.27-1.27
+                    a2 2 0 0 1 2.11-.45
+                    c.85.29 1.73.5 2.63.62
+                    A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                Call Us
+            </a>
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                type="button"
+                aria-label="Open menu"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+    </header>
+
+    <main id="top">
+
+        <!-- ================= HERO ================= -->
+        <section class="hero">
+            <div class="container hero__grid">
+
+                <div class="hero__content reveal">
+
+                    <div class="eyebrow">
+                        <span class="eyebrow__dot"></span>
+                        Help with Household and Property Tasks
+                    </div>
+
+                    <h1>
+                        We'll take care of
+                        the tasks
+                        <span>you don't have time for.</span>
+                    </h1>
+
+                    <p class="hero__text">
+                        ҚЫЗМЕТ KZ provides help with your home, yard and property.
+                        Tell us what needs to be done — we'll discuss the details
+                        and agree on the arrangements.
+                    </p>
+
+                    <div class="hero__actions">
+                        <a
+                            class="btn btn--primary btn--large"
+                            data-phone
+                            href="#"
+                        >
+                            Call Us
+                        </a>
+
+                        <a
+                            class="btn btn--secondary btn--large"
+                            href="#contact-form"
+                        >
+                            Discuss Your Task
+                        </a>
+                    </div>
+
+                    <div class="hero__trust">
+
+                        <div class="trust-item">
+                            <span class="trust-item__icon">✓</span>
+                            A Wide Range of Tasks
+                        </div>
+
+                        <div class="trust-item">
+                            <span class="trust-item__icon">✓</span>
+                            Agreed in Advance
+                        </div>
+
+                        <div class="trust-item">
+                            <span class="trust-item__icon">✓</span>
+                            Clear Communication
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="hero__visual reveal reveal--delay">
+
+                    <div class="hero__image">
+                        <img
+                            src="images/Hero-KAZ.png"
+                            alt="Property maintenance work beside a private home"
+                        >
+                    </div>
+
+                    <div class="hero-card">
+                        <div class="hero-card__icon">✓</div>
+
+                        <div>
+                            <strong>Have a Task in Mind?</strong>
+                            <span>Tell Us About It</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= SERVICES ================= -->
+        <section class="section services" id="services">
+            <div class="container">
+
+                <div class="section-heading reveal">
+                    <span class="section-label">WHAT WE DO</span>
+
+                    <h2>
+                        Help with Your Home
+                        <span>and Property Maintenance</span>
+                    </h2>
+
+                    <p>
+                        We handle household, property maintenance and other tasks
+                        according to your needs.
+                    </p>
+                </div>
+
+                <div class="services-grid">
+
+                    <article class="service-card reveal">
+                        <div class="service-card__number">01</div>
+                        <div class="service-card__icon">🏠</div>
+
+                        <h3>Household Assistance</h3>
+
+                        <p>
+                            Household and maintenance tasks
+                            carried out in apartments or private homes.
+                        </p>
+
+                        <a href="#contact-form">
+                            Discuss Your Task →
+                        </a>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <div class="service-card__number">02</div>
+                        <div class="service-card__icon">🗑️</div>
+
+                        <h3>Waste Removal</h3>
+
+                        <p>
+                            Collecting and removing household and maintenance waste
+                            and cleaning the area after work is completed.
+                        </p>
+
+                        <a href="#contact-form">
+                            Discuss Your Task →
+                        </a>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <div class="service-card__number">03</div>
+                        <div class="service-card__icon">🌿</div>
+
+                        <h3>Yard Cleaning</h3>
+
+                        <p>
+                            Removing leaves, branches and rubbish,
+                            along with other tasks to keep your property tidy.
+                        </p>
+
+                        <a href="#contact-form">
+                            Discuss Your Task →
+                        </a>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <div class="service-card__number">04</div>
+                        <div class="service-card__icon">🧱</div>
+
+                        <h3>Fence Repair</h3>
+
+                        <p>
+                            Repairing and restoring damaged
+                            sections of fences.
+                        </p>
+
+                        <a href="#contact-form">
+                            Discuss Your Task →
+                        </a>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <div class="service-card__number">05</div>
+                        <div class="service-card__icon">💧</div>
+
+                        <h3>Septic System Services</h3>
+
+                        <p>
+                            Assistance with arranging work
+                            related to septic system installation.
+                        </p>
+
+                        <a href="#contact-form">
+                            Discuss Your Task →
+                        </a>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <div class="service-card__number">06</div>
+                        <div class="service-card__icon">🐑</div>
+
+                        <h3>Livestock Slaughter Services</h3>
+
+                        <p>
+                            This service is provided
+                            by prior arrangement.
+                        </p>
+
+                        <a href="#contact-form">
+                            Discuss Your Task →
+                        </a>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <div class="service-card__number">07</div>
+                        <div class="service-card__icon">🚕</div>
+
+                        <h3>Intercity Taxi</h3>
+
+                        <p>
+                            Passenger transportation between cities
+                            by prior arrangement.
+                        </p>
+
+                        <a href="#contact-form">
+                            Discuss Your Trip →
+                        </a>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <div class="service-card__number">08</div>
+                        <div class="service-card__icon">🚚</div>
+
+                        <h3>Local Delivery</h3>
+
+                        <p>
+                            Delivery of items, goods and other
+                            cargo within the city.
+                        </p>
+
+                        <a href="#contact-form">
+                            Discuss Delivery →
+                        </a>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <div class="service-card__number">09</div>
+                        <div class="service-card__icon">🧹</div>
+
+                        <h3>Cleaning Services</h3>
+
+                        <p>
+                            Cleaning apartments, houses and other
+                            premises by prior arrangement.
+                        </p>
+
+                        <a href="#contact-form">
+                            Book a Cleaning →
+                        </a>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <div class="service-card__number">10</div>
+                        <div class="service-card__icon">🚜</div>
+
+                        <h3>Heavy Equipment Services</h3>
+
+                        <p>
+                            Specialized machinery for construction
+                            and property maintenance tasks.
+                        </p>
+
+                        <a href="#contact-form">
+                            Discuss Your Task →
+                        </a>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <div class="service-card__number">11</div>
+                        <div class="service-card__icon">❄️</div>
+
+                        <h3>Air Conditioner Installation</h3>
+
+                        <p>
+                            Installation and connection of air conditioners
+                            in homes or other premises.
+                        </p>
+
+                        <a href="#contact-form">
+                            Discuss Installation →
+                        </a>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <div class="service-card__number">12</div>
+                        <div class="service-card__icon">👨‍🍳</div>
+
+                        <h3>Cooking Services</h3>
+
+                        <p>
+                            Meal preparation for homes, events
+                            and other occasions.
+                        </p>
+
+                        <a href="#contact-form">
+                            Discuss Your Task →
+                        </a>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <div class="service-card__number">13</div>
+                        <div class="service-card__icon">⚡</div>
+
+                        <h3>Electrical Services</h3>
+
+                        <p>
+                            Electrical installation, repairs
+                            and equipment connections.
+                        </p>
+
+                        <a href="#contact-form">
+                            Discuss Your Task →
+                        </a>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <div class="service-card__number">14</div>
+                        <div class="service-card__icon">🔧</div>
+
+                        <h3>Plumbing Services</h3>
+
+                        <p>
+                            Repair, installation and maintenance
+                            of plumbing equipment.
+                        </p>
+
+                        <a href="#contact-form">
+                            Discuss Your Task →
+                        </a>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <div class="service-card__number">15</div>
+                        <div class="service-card__icon">⚙️</div>
+
+                        <h3>Business Automation</h3>
+
+                        <p>
+                            Help with automating business processes
+                            and improving operational efficiency.
+                        </p>
+
+                        <a href="#contact-form">
+                            Discuss Your Task →
+                        </a>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <div class="service-card__number">16</div>
+                        <div class="service-card__icon">❄️</div>
+
+                        <h3>Snow Removal</h3>
+
+                        <p>
+                            Snow removal from yards, properties,
+                            roads and entrances.
+                        </p>
+
+                        <a href="#contact-form">
+                            Discuss Your Task →
+                        </a>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <div class="service-card__number">17</div>
+                        <div class="service-card__icon">🔧</div>
+
+                        <h3>Other Services</h3>
+
+                        <p>
+                            Can't find the service you need in the list?
+                            Tell us what you need.
+                        </p>
+
+                        <a href="#contact-form">
+                            Discuss Your Task →
+                        </a>
+                    </article>
+
+                    <article class="service-card service-card--accent reveal">
+                        <div class="service-card__number">18</div>
+                        <div class="service-card__icon">💬</div>
+
+                        <h3>Services Tailored to Your Needs</h3>
+
+                        <p>
+                            You don't need to know the exact name of the service.
+                            Simply describe what needs to be done.
+                        </p>
+
+                        <a href="#contact-form">
+                            Describe Your Task →
+                        </a>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= NOT FOUND ================= -->
+        <section class="section problem">
+            <div class="container">
+
+                <div class="problem__box reveal">
+
+                    <div class="problem__content">
+                        <span class="section-label">
+                            CAN'T FIND THE SERVICE YOU NEED?
+                        </span>
+
+                        <h2>
+                            Not sure what
+                            the job is called?
+                        </h2>
+
+                        <p>
+                            No problem. Just tell us what needs to be done.
+                            We'll discuss the task and let you know
+                            how we can help.
+                        </p>
+
+                        <a
+                            href="#"
+                            data-phone
+                            class="btn btn--light btn--large"
+                        >
+                            Call Us to Discuss
+                        </a>
+                    </div>
+
+                    <div class="problem__shape">
+                        <span>?</span>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= WHY US ================= -->
+        <section class="section why">
+            <div class="container">
+
+                <div class="section-heading section-heading--center reveal">
+                    <span class="section-label">WHY ҚЫЗМЕТ KZ</span>
+
+                    <h2>
+                        It's Easier Than You Think
+                    </h2>
+
+                    <p>
+                        You don't need to know the names of specific services.
+                        Tell us what you need, and we'll work out the details together.
+                    </p>
+                </div>
+
+                <div class="advantages">
+
+                    <article class="advantage reveal">
+                        <div class="advantage__icon">01</div>
+
+                        <h3>One Point of Contact</h3>
+
+                        <p>
+                            No need to search for a separate
+                            specialist for every household task.
+                        </p>
+                    </article>
+
+                    <article class="advantage reveal">
+                        <div class="advantage__icon">02</div>
+
+                        <h3>Clear Communication</h3>
+
+                        <p>
+                            Simply explain what you need
+                            in your own words.
+                        </p>
+                    </article>
+
+                    <article class="advantage reveal">
+                        <div class="advantage__icon">03</div>
+
+                        <h3>Agreed in Advance</h3>
+
+                        <p>
+                            We agree on the task, scope of work
+                            and a convenient time beforehand.
+                        </p>
+                    </article>
+
+                    <article class="advantage reveal">
+                        <div class="advantage__icon">04</div>
+
+                        <h3>A Wide Range of Tasks</h3>
+
+                        <p>
+                            Help with your home, yard, property
+                            and other practical tasks.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= HOW ================= -->
+        <section class="section how" id="how">
+            <div class="container">
+
+                <div class="section-heading reveal">
+                    <span class="section-label">HOW IT WORKS</span>
+
+                    <h2>
+                        Three Simple Steps —
+                        <span>And Your Task Gets Done</span>
+                    </h2>
+                </div>
+
+                <div class="steps">
+
+                    <article class="step reveal">
+                        <div class="step__number">01</div>
+
+                        <div>
+                            <h3>Get in Touch</h3>
+
+                            <p>
+                                Give us a call and tell us
+                                what needs to be done.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="step reveal">
+                        <div class="step__number">02</div>
+
+                        <div>
+                            <h3>Discuss the Details</h3>
+
+                            <p>
+                                We clarify the requirements, scope of work
+                                and a convenient time.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="step reveal">
+                        <div class="step__number">03</div>
+
+                        <div>
+                            <h3>We Get It Done</h3>
+
+                            <p>
+                                We arrive at the agreed time
+                                and carry out the work.
+                            </p>
+                        </div>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= WORKS ================= -->
+        <section class="section works" id="works">
+            <div class="container">
+
+                <div class="section-heading reveal">
+                    <span class="section-label">OUR WORK</span>
+
+                    <h2>
+                        We Do the Work —
+                        <span>And Show the Results</span>
+                    </h2>
+
+                    <p>
+                        This section will feature photos of actual
+                        jobs completed by ҚЫЗМЕТ KZ.
+                    </p>
+                </div>
+
+                <div class="gallery">
+
+                    <div class="gallery__item gallery__item--large reveal">
+                        <img
+                            src="images/work-01.jpg"
+                            alt="Property maintenance work"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="gallery__item reveal">
+                        <img
+                            src="images/work-02.jpg"
+                            alt="Site cleaning"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="gallery__item reveal">
+                        <img
+                            src="images/work-03.jpg"
+                            alt="Repair work"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="gallery__item reveal">
+                        <img
+                            src="images/work-04.jpg"
+                            alt="Yard maintenance work"
+                            loading="lazy"
+                        >
+                    </div>
+
+                </div>
+
+                <div class="gallery-note reveal">
+                    <span>📸</span>
+
+                    <p>
+                        After launching the website, replace the temporary images
+                        with photos of actual completed jobs.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= CTA ================= -->
+        <section class="cta">
+            <div class="container">
+
+                <div class="cta__inner reveal">
+
+                    <div>
+                        <span class="section-label section-label--light">
+                            HAVE A TASK IN MIND?
+                        </span>
+
+                        <h2>
+                            Tell Us What
+                            Needs to Be Done.
+                        </h2>
+
+                        <p>
+                            You don't need to know the name of the service.
+                            Simply describe what you need,
+                            and we'll discuss how we can help.
+                        </p>
+                    </div>
+
+                    <div class="cta__action">
+
+                        <a
+                            href="#"
+                            data-phone
+                            class="btn btn--light btn--large"
+                        >
+                            Call Us
+                        </a>
+
+                        <a
+                            href="#contact-form"
+                            class="cta__phone"
+                            data-phone-display
+                        >
+                            +7 700 000 00 00
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= CONTACTS ================= -->
+        <section class="section contacts" id="contacts">
+            <div class="container contacts__grid">
+
+                <div class="contacts__info reveal">
+
+                    <span class="section-label">CONTACT US</span>
+
+                    <h2>
+                        Let's Discuss
+                        Your Task Together
+                    </h2>
+
+                    <p>
+                        Give us a call and tell us
+                        what needs to be done.
+                    </p>
+
+                    <a
+                        class="contacts__phone"
+                        data-phone
+                        data-phone-display
+                        href="#"
+                    ></a>
+
+                    <div class="contact-details">
+
+                        <div class="contact-detail">
+                            <span>📍</span>
+
+                            <div>
+                                <small>City</small>
+                                <strong>Your City</strong>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail">
+                            <span>🕐</span>
+
+                            <div>
+                                <small>Working Hours</small>
+                                <strong>By Prior Arrangement</strong>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="contact-form-wrapper reveal" id="contact-form">
+
+                    <div class="contact-form-card">
+
+                        <span class="form-badge">QUICK REQUEST</span>
+
+                        <h3>
+                            Tell Us What
+                            Needs to Be Done
+                        </h3>
+
+                        <p>
+                            The form is currently running in demonstration mode.
+                            To receive actual requests, a backend
+                            or form service must be connected.
+                        </p>
+
+                        <form id="requestForm">
+
+                            <label>
+                                <span>Your Name</span>
+
+                                <input
+                                    type="text"
+                                    name="name"
+                                    placeholder="For example, Aidar"
+                                    autocomplete="name"
+                                >
+                            </label>
+
+                            <label>
+                                <span>Phone Number *</span>
+
+                                <input
+                                    type="tel"
+                                    name="phone"
+                                    placeholder="+7 700 000 00 00"
+                                    autocomplete="tel"
+                                    required
+                                >
+                            </label>
+
+                            <label>
+                                <span>What Needs to Be Done?</span>
+
+                                <textarea
+                                    name="message"
+                                    rows="4"
+                                    placeholder="For example: yard cleaning, snow removal or item delivery..."
+                                ></textarea>
+                            </label>
+
+                            <button
+                                type="submit"
+                                class="btn btn--primary btn--full"
+                            >
+                                Submit Request
+                            </button>
+
+                            <div
+                                class="form-message"
+                                id="formMessage"
+                                aria-live="polite"
+                            ></div>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="container footer__inner">
+
+            <div class="footer__brand">
+
+                <a href="#top" class="logo logo--footer">
+                    <span>ҚЫЗМЕТ</span>
+                    <strong>KZ</strong>
+                </a>
+
+                <p>
+                    Help for your home, yard and property.
+                </p>
+
+            </div>
+
+            <div class="footer__links">
+                <a href="#services">Services</a>
+                <a href="#how">How It Works</a>
+                <a href="#works">Our Work</a>
+                <a href="#contacts">Contact</a>
+            </div>
+
+            <div class="footer__contact">
+
+                <a
+                    href="#"
+                    data-phone
+                    data-phone-display
+                ></a>
+
+                <span>© 2026 ҚЫЗМЕТ KZ</span>
+
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- ================= MOBILE CTA ================= -->
+    <div class="mobile-cta">
+
+        <a
+            href="#"
+            data-phone
+            class="mobile-cta__call"
+        >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2
+                19.79 19.79 0 0 1-8.63-3.07
+                19.5 19.5 0 0 1-6-6
+                19.79 19.79 0 0 1-3.07-8.67
+                A2 2 0 0 1 4.11 2h3a2 2 0 0 1
+                2 1.72c.12.9.33 1.78.62 2.63
+                a2 2 0 0 1-.45 2.11L8 9.73
+                a16 16 0 0 0 6 6l1.27-1.27
+                a2 2 0 0 1 2.11-.45
+                c.85.29 1.73.5 2.63.62
+                A2 2 0 0 1 22 16.92z"/>
+            </svg>
+
+            Call Us
+        </a>
+
+        <a
+            href="#contact-form"
+            class="mobile-cta__form"
+        >
+            Discuss
+        </a>
+
+    </div>
+
+    <script src="script.js"></script>
 
 </body>
 </html>

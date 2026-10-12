@@ -235,6 +235,45 @@ document.addEventListener("DOMContentLoaded", () => {
         );
     }
 
+    // ==========================    Language change part
+
+// ================= LANGUAGE SWITCH =================
+
+    const languageSelect = document.getElementById("languageSelect");
+
+    const languagePages = {
+        kk: "index.html",
+        ru: "index-ru.html",
+        uz: "indexuz.html",
+        tr: "page-tur.html",
+        en: "page-en.html"
+    };
+
+    if (languageSelect) {
+        languageSelect.addEventListener("change", function () {
+            const targetUrl = this.value;
+
+            const allowedPages = Object.values(languagePages);
+
+            if (!allowedPages.includes(targetUrl)) {
+                console.error("Неизвестная страница языка:", targetUrl);
+                return;
+            }
+
+            window.location.assign(
+                new URL(targetUrl, window.location.href).href
+            );
+        });
+
+        // Показываем язык текущей страницы в списке
+        const currentPage = window.location.pathname.split("/").pop() || "index.html";
+
+        if (Object.values(languagePages).includes(currentPage)) {
+            languageSelect.value = currentPage;
+        }
+    }
+
+    // ==================================================
 
     /* ================= HEADER SHADOW ================= */
 
@@ -265,3 +304,4 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 });
+
