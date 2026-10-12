@@ -237,42 +237,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // ==========================    Language change part
 
-// ================= LANGUAGE SWITCH =================
-
+    // ================= LANGUAGE SWITCH =================
+    
     const languageSelect = document.getElementById("languageSelect");
-
-    const languagePages = {
-        kk: "index.html",
-        ru: "index-ru.html",
-        uz: "indexuz.html",
-        tr: "page-tur.html",
-        en: "page-en.html"
-    };
-
+    
     if (languageSelect) {
         languageSelect.addEventListener("change", function () {
             const targetUrl = this.value;
-
-            const allowedPages = Object.values(languagePages);
-
-            if (!allowedPages.includes(targetUrl)) {
-                console.error("Неизвестная страница языка:", targetUrl);
-                return;
+    
+            if (!targetUrl) return;
+    
+            // Разрешаем только относительные пути
+            if (targetUrl === "./" || /^[a-zA-Z0-9_-]+\.html$/.test(targetUrl)) {
+                window.location.assign(
+                    new URL(targetUrl, window.location.href).href
+                );
+            } else {
+                console.error("Недопустимый адрес:", targetUrl);
             }
-
-            window.location.assign(
-                new URL(targetUrl, window.location.href).href
-            );
         });
-
-        // Показываем язык текущей страницы в списке
-        const currentPage = window.location.pathname.split("/").pop() || "index.html";
-
-        if (Object.values(languagePages).includes(currentPage)) {
+    
+        // Определяем текущую страницу
+        const currentPage = window.location.pathname.split("/").pop();
+    
+        if (currentPage === "" || currentPage === "index.html") {
+            languageSelect.value = "./";
+        } else {
             languageSelect.value = currentPage;
         }
     }
-
+    
     // ==================================================
 
     /* ================= HEADER SHADOW ================= */
