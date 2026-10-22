@@ -138,6 +138,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* ================= DEMO FORM ================= */
 
+/* -- Begin 23102026 ------------------------------------------ */
+
+
+    /* ================= DJANGO REQUEST FORM ================= */
+
+    const API_URL =
+        "http://192.168.8.112:8000/api/service-requests/";
+
     const form =
         document.getElementById("requestForm");
 
@@ -146,34 +154,185 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (form && formMessage) {
 
-        form.addEventListener("submit", (event) => {
+        const submitButton =
+            form.querySelector('button[type="submit"]');
 
+        const translations = {
+            kk: {
+                sending: "Өтінім жіберілуде...",
+                success: "Өтінім қабылданды! Жақында сізбен хабарласамыз.",
+                successId: "Өтінім қабылданды! Нөмірі: ",
+                error: "Өтінімді жіберу мүмкін болмады. Қайталап көріңіз.",
+                phone: "Телефон нөмірін енгізіңіз."
+            },
+
+            ru: {
+                sending: "Отправляем заявку...",
+                success: "Заявка принята! Скоро мы с вами свяжемся.",
+                successId: "Заявка принята! Номер заявки: ",
+                error: "Не удалось отправить заявку. Попробуйте ещё раз.",
+                phone: "Введите номер телефона."
+            },
+
+            uz: {
+                sending: "Ariza yuborilmoqda...",
+                success: "Ariza qabul qilindi! Tez orada siz bilan bog‘lanamiz.",
+                successId: "Ariza qabul qilindi! Ariza raqami: ",
+                error: "Arizani yuborib bo‘lmadi. Qayta urinib ko‘ring.",
+                phone: "Telefon raqamingizni kiriting."
+            },
+
+            tr: {
+                sending: "Başvurunuz gönderiliyor...",
+                success: "Başvurunuz alındı! Yakında sizinle iletişime geçeceğiz.",
+                successId: "Başvurunuz alındı! Başvuru numarası: ",
+                error: "Başvuru gönderilemedi. Lütfen tekrar deneyin.",
+                phone: "Telefon numaranızı girin."
+            },
+
+            en: {
+                sending: "Submitting your request...",
+                success: "Request received! We will contact you soon.",
+                successId: "Request received! Request number: ",
+                error: "Could not submit your request. Please try again.",
+                phone: "Please enter your phone number."
+            }
+        };
+
+        function getLanguage() {
+            const language = (
+                document.documentElement.lang || "kk"
+            ).toLowerCase().split("-")[0];
+
+            return translations[language]
+                ? language
+                : "kk";
+        }
+
+        function showFormMessage(message, success = false) {
+            formMessage.textContent = message;
+
+            formMessage.classList.toggle(
+                "is-success",
+                success
+            );
+
+            formMessage.classList.toggle(
+                "is-error",
+                !success
+            );
+
+            formMessage.setAttribute(
+                "role",
+                success ? "status" : "alert"
+            );
+        }
+
+        form.addEventListener("submit", async (event) => {
             event.preventDefault();
 
-            const phone =
-                form.querySelector(
-                    'input[name="phone"]'
-                );
-
-            if (!phone.value.trim()) {
-
-                formMessage.textContent =
-                    "Пожалуйста, укажите номер телефона.";
-
-                phone.focus();
-
+            // Не допускаем повторную отправку,
+            // пока предыдущий запрос ещё выполняется.
+            if (submitButton && submitButton.disabled) {
                 return;
             }
 
+            if (!form.reportValidity()) {
+                return;
+            }
 
-            formMessage.textContent =
-                "Спасибо! Заявка принята. В рабочей версии здесь будет отправка на телефон или сервер.";
+            const text = translations[getLanguage()];
 
-            form.reset();
+            const phoneInput =
+                form.querySelector('input[name="phone"]');
 
+            const data = {
+                name: form.elements.name
+                    ? form.elements.name.value.trim()
+                    : "",
+
+                phone: phoneInput
+                    ? phoneInput.value.trim()
+                    : "",
+
+                message: form.elements.message
+                    ? form.elements.message.value.trim()
+                    : ""
+            };
+
+            if (!data.phone) {
+                showFormMessage(text.phone);
+                if (phoneInput) phoneInput.focus();
+                return;
+            }
+
+            if (submitButton) {
+                submitButton.disabled = true;
+            }
+
+            showFormMessage(text.sending, true);
+
+            try {
+                const response = await fetch(API_URL, {
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json"
+                    },
+
+                    body: JSON.stringify(data)
+                });
+
+                const responseText = await response.text();
+
+                let result;
+
+                try {
+                    result = JSON.parse(responseText);
+                } catch {
+                    throw new Error(
+                        `Invalid server response: HTTP ${response.status}`
+                    );
+                }
+
+                if (!response.ok || result.success !== true) {
+                    throw new Error(
+                        result.message ||
+                        result.error ||
+                        `HTTP ${response.status}`
+                    );
+                }
+
+                const successMessage = result.id
+                    ? text.successId + "#" + result.id
+                    : text.success;
+
+                showFormMessage(successMessage, true);
+
+                form.reset();
+
+            } catch (error) {
+                console.error(
+                    "Django request submission failed:",
+                    error
+                );
+
+                showFormMessage(text.error);
+
+            } finally {
+                if (submitButton) {
+                    submitButton.disabled = false;
+                }
+            }
         });
     }
 
+    /* ================= END DJANGO REQUEST FORM ================= */
+
+
+
+/* -----------  End 23102026 T02:10   --------------------------- */
 
     /* ================= PHONE MASK ================= */
 
