@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
     /* ================= DJANGO REQUEST FORM ================= */
 
     const API_URL =
-        "http://192.168.8.112:8000/api/service-requests/";
+        "https://target1000.pythonanywhere.com/api/service-requests/";
 
     const form =
         document.getElementById("requestForm");
