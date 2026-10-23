@@ -1770,3 +1770,26 @@ button {
         font-size: 12px;
     }
 }
+
+
+
+
+/* ================= NARROW MOBILE ================= */
+
+@media (max-width: 360px) {
+    .services-grid {
+        gap: 8px;
+    }
+
+    .service-card {
+        padding: 11px 9px;
+    }
+
+    .service-card h3 {
+        font-size: 13px;
+    }
+
+    .service-card a {
+        font-size: 10px;
+    }
+}
