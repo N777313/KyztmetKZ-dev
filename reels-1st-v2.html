@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kyzmet Reels</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #111;
+      font-family: Arial, sans-serif;
+    }
+
+    .video-container {
+      width: min(100vw, 405px);
+      height: min(177.78vw, 720px);
+      aspect-ratio: 9 / 16;
+      background: #000;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    video {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+    }
+
+    @media (max-width: 480px) {
+      .video-container {
+        width: 100vw;
+        height: min(177.78vw, 100dvh);
+        border-radius: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="video-container">
+    <video
+      controls
+      playsinline
+      preload="metadata"
+    >
+      <source
+        src="https://raw.githubusercontent.com/N777313/KyztmetKZ-dev/main/reels/kyzmet-reels---number.mp4"
+        type="video/mp4"
+      >
+      Ваш браузер не поддерживает HTML5-видео.
+    </video>
+  </div>
+
+</body>
+</html>
