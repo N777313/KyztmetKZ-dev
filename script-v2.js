@@ -22,7 +22,7 @@ function runModule(name, initFunction) {
    ============================================================== */
 
 function initPhoneLinks() {
-    const customPhone = "+77013130007";
+    const customPhone = "+77013135436";
 
     document.querySelectorAll("[data-phone]").forEach((element) => {
         element.href = `tel:${customPhone}`;
